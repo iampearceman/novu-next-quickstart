@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, Zap, GitBranch, Activity, Users, Key } from 'lucide-react';
+import { Zap, GitBranch, Activity, Users, Key } from 'lucide-react';
 
 const NovuLogo = () => (
   <svg width="40" height="40" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,7 +10,14 @@ const NovuLogo = () => (
   </svg>
 );
 
-const NavItem = ({ icon, text, onClick, isActive }) => (
+interface NavItemProps {
+  icon: React.ReactNode;
+  text: string;
+  onClick?: () => void;
+  isActive?: boolean;
+}
+
+const NavItem: React.FC<NavItemProps> = ({ icon, text, onClick, isActive }) => (
   <li className="mb-2">
     <a
       href="#"
@@ -25,7 +32,12 @@ const NavItem = ({ icon, text, onClick, isActive }) => (
   </li>
 );
 
-const SideNavigation = ({ setActivePage, activePage }) => (
+interface SideNavigationProps {
+  setActivePage: (page: string) => void;
+  activePage: string;
+}
+
+const SideNavigation: React.FC<SideNavigationProps> = ({ setActivePage, activePage }) => (
   <div className="w-64 bg-gray-900 text-gray-100 h-full p-4 flex flex-col">
     <div className="mb-8">
       <div className="mb-4">

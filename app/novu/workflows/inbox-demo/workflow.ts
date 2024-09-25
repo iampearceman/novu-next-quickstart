@@ -1,14 +1,9 @@
 import { workflow } from "@novu/framework";
-import { renderEmail } from "./email-templates/react-email-template";
 import { payloadSchema } from './payloadSchema';
 import {
-  emailControlSchema,
-  pushControlSchema,
+
   inAppControlSchema,
-  smsControlSchema,
-  chatControlSchema,
-  digestControlSchema,
-  delayControlSchema,
+
 } from './stepsControlSchema';
 
 
@@ -18,13 +13,25 @@ const workflowName = 'Inbox Demo';
 // Define the workflow
 export const inboxDemo = workflow(
   workflowName,
-  async ({ step, payload }) => {
+  async ({ step }) => {
     // Define the step for the workflow
     // -----------------------------------in-app step-------------------------------------------------------------------------
     await step.inApp(
       'In App Step',
       async (controls) => {
-        const result: any = {
+        const result: {
+          subject: string;
+          body: string;
+          avatar?: string;
+          primaryAction?: {
+            label: string;
+            url: string;
+          };
+          secondaryAction?: {
+            label: string;
+            url: string;
+          };
+        } = {
           subject: controls.inAppSubject,
           body: controls.inAppBody,
         };

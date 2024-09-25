@@ -1,6 +1,12 @@
 import React from 'react';
 
-const IntegrationCard = ({ name, description, icon }) => (
+interface IntegrationCardProps {
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
+const IntegrationCard: React.FC<IntegrationCardProps> = ({ name, description, icon }) => (
   <div className="bg-gray-100 p-4 rounded-lg">
     <div className="flex items-center mb-2">
       {icon}

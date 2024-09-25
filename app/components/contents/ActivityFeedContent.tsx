@@ -1,6 +1,12 @@
 import React from 'react';
 
-const ActivityItem = ({ type, message, timestamp }) => (
+interface ActivityItemProps {
+  type: string;
+  message: string;
+  timestamp: string;
+}
+
+const ActivityItem: React.FC<ActivityItemProps> = ({ type, message, timestamp }) => (
   <div className="bg-gray-100 p-4 rounded-lg mb-4">
     <div className="flex justify-between items-center mb-2">
       <span className="font-semibold">{type}</span>

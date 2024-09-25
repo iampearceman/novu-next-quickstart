@@ -1,11 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-
-const FrameworkBox: React.FC<{ name: string; logo: string }> = ({ name, logo }) => (
-  <div className="bg-gray-700 p-4 rounded-lg flex items-center justify-center">
-    <Image src={logo} alt={name} width={40} height={40} />
-  </div>
-);
 
 const CodeBlock: React.FC<{ command: string }> = ({ command }) => (
   <div className="bg-black p-3 rounded-lg">
