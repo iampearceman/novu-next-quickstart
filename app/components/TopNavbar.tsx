@@ -20,7 +20,7 @@ interface NovuConfig {
 }
 
 const novuConfig: NovuConfig = {
-  applicationIdentifier: process.env.NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIRER || 'default-app-id',
+  applicationIdentifier: process.env.NEXT_PUBLIC_NOVU_APPLICATION_IDENTIFIER || 'default-app-id',
   subscriberId: process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID || 'default-subscriber-id',
   appearance: {
     elements: {
