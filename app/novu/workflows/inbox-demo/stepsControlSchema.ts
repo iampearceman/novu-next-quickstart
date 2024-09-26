@@ -20,7 +20,7 @@ export const emailControlSchema = z.object({
       },
       {
         type: "text",
-        text: "Congratulations on receiving your first notification email from Novu! Join the hundreds of thousands of developers worldwide who use Novu to build notification platforms for their products.",
+        text: "Congratulations on receiving your first notification email from Novu!",
         align: "left",
       },
       {
