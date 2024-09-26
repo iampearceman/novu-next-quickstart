@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
 import { Code, Play, Wrench, Zap, Send, FileCheck } from 'lucide-react';
 
-const CodeBlock = ({ command }) => (
+const CodeBlock = ({ command }: { command: string }) => (
   <div className="bg-gray-900 p-3 rounded-lg">
     <code className="text-green-400">{command}</code>
   </div>
 );
 
-const Card = ({ icon: Icon, title, description, color, isSelected, onClick }) => {
+import { LucideProps } from 'lucide-react';
+
+interface CardProps {
+  icon: React.ComponentType<LucideProps>;
+  title: string;
+  description: string;
+  color: 'indigo' | 'green' | 'blue' | 'yellow' | 'purple' | 'red';
+  isSelected: boolean;
+  onClick: () => void;
+}
+
+const Card = ({ icon: Icon, title, description, color, isSelected, onClick }: CardProps) => {
   const colorClasses = {
     indigo: {
       bg: isSelected ? 'bg-indigo-700' : 'bg-indigo-600',
@@ -64,10 +75,10 @@ const DetailView = ({ content }) => (
   </div>
 );
 
-const MainContent = () => {
-  const [selectedCard, setSelectedCard] = useState(null);
+const Onboarding = () => {
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
 
-  const cardData = [
+  const cardData: CardProps[] = [
     {
       icon: Code,
       title: "Build",
@@ -101,7 +112,7 @@ const MainContent = () => {
           <ol className="list-decimal list-inside space-y-2 mb-4">
             <li>Use the Novu CLI to trigger a test event</li>
             <li>Observe the workflow execution in Novu Studio</li>
-            <li>Check each step's status and output</li>
+            <li>Check each step&#39;s status and output</li>
             <li>Verify that notifications are sent correctly</li>
             <li>Review any error messages or warnings</li>
             <li>Make adjustments to your workflow as needed</li>
@@ -165,7 +176,7 @@ const MainContent = () => {
         <>
           <h3 className="text-2xl font-semibold mb-4">Deploying Your Novu Workflows</h3>
           <ol className="list-decimal list-inside space-y-2 mb-4">
-            <li>Review all workflows and ensure they're production-ready</li>
+            <li>Review all workflows and ensure they&#39;re production-ready</li>
             <li>Use the Novu CLI to deploy workflows to production</li>
             <li>Verify that all workflows are correctly deployed</li>
             <li>Update your application with production API keys</li>
@@ -225,4 +236,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default Onboarding;

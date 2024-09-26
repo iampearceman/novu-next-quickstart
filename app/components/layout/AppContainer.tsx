@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import SideNavigation from '../side-nav/SideNavigation';
 import TopNavbar from '../TopNavbar';
-import MainContent from '../contents/MainContent';
+import Onboarding from '../contents/Onboarding';
 import IntegrationsContent from '../contents/IntegrationsContent';
 import ActivityFeedContent from '../contents/ActivityFeedContent';
+import Main from '../contents/Main';
 
 const AppContainer = () => {
   const [activePage, setActivePage] = useState('home');
@@ -12,13 +13,15 @@ const AppContainer = () => {
   const renderContent = () => {
     switch (activePage) {
       case 'home':
-        return <MainContent />;
+        return <Main />;
+      case 'onboarding':
+        return <Onboarding />;
       case 'integrations':
         return <IntegrationsContent />;
       case 'activity':
         return <ActivityFeedContent />;
       default:
-        return <MainContent />;
+        return <Main />;
     }
   };
 
