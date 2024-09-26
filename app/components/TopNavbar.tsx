@@ -27,7 +27,7 @@ const novuConfig: NovuConfig = {
       bellIcon: {
         height: "30px",
         width: "30px",
-        color: "white",
+        color: ''
       },
       popoverContent: {
         marginTop: "15px !important",
@@ -38,12 +38,11 @@ const novuConfig: NovuConfig = {
 };
 
 const TopNavbar: React.FC = () => (
-  <div className="bg-gray-900 text-white p-4 flex justify-between items-center">
+  <div className="bg-white text-white p-4 flex justify-between items-center">
     <div className="flex items-center space-x-4">
-      <span className="font-semibold text-lg">Novu Flow</span>
     </div>
     <div className="flex items-center space-x-3">
-      <button className="hover:bg-gray-700 rounded-full transition-colors duration-200">
+      <button className="hover:bg-gray-100 rounded-full transition-colors duration-200">
         <Inbox {...novuConfig} />
       </button>
     </div>

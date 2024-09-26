@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import SideNavigation from '../SideNavigation';
+import SideNavigation from '../side-nav/SideNavigation';
 import TopNavbar from '../TopNavbar';
 import MainContent from '../contents/MainContent';
 import IntegrationsContent from '../contents/IntegrationsContent';
