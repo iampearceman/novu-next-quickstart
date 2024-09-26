@@ -20,7 +20,7 @@ export const emailControlSchema = z.object({
       },
       {
         type: "text",
-        text: "Congratulations on receiving your first notification email from Novu!",
+        text: "Congratulations on receiving your first notification email from Novu! Join the hundreds of thousands of developers worldwide who use Novu to build notification platforms for their products.",
         align: "left",
       },
       {
@@ -43,14 +43,14 @@ export const emailControlSchema = z.object({
 
 export const inAppControlSchema = z.object({
   inAppSubject: z.string().default("**Welcome to Novu!**"),
-  inAppBody: z.string().default("Congratulations on receiving your first notification in-app from Novu! Join the hundreds of thousands of developers worldwide who use Novu to build notification platforms for their products. /n Ready to get started? Click on the button below, and you will see first-hand how easily you can edit this in-app content."),
+  inAppBody: z.string().default("Congratulations on receiving your first notification in-app from Novu! Want to join our Discord?"),
   inAppAvatar: z.string().default("https://avatars.githubusercontent.com/u/63902456?v=4"),
   showInAppAvatar: z.boolean().default(true),
-  inAppPrimaryActionLabel: z.string().default("I'm Ready"),
+  inAppPrimaryActionLabel: z.string().default("Join Discord"),
   enablePrimaryAction: z.boolean().default(true),
   inAppPrimaryActionUrl: z.string().default("https://novu.com"),
-  inAppSecondaryActionLabel: z.string().default("I would like to learn more"),
-  enableSecondaryAction: z.boolean().default(false),
+  inAppSecondaryActionLabel: z.string().default("Dismiss"),
+  enableSecondaryAction: z.boolean().default(true),
   inAppSecondaryActionUrl: z.string().default("https://novu.com"),
 });
 
